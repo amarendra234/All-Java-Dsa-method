@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class QueueMethodsExample {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>(); // Can also use PriorityQueue or ArrayDeque
+
+        // Add elements to the queue
+        queue.add(10);  // Throws exception if capacity is full
+        queue.offer(20); // Returns false if capacity is full (preferred for bounded queues)
+
+        // Retrieve and remove elements
+        System.out.println(queue.poll()); // Removes and returns head, returns null if empty
+        System.out.println(queue.remove()); // Removes and returns head, throws exception if empty
+
+        // Retrieve without removing
+        System.out.println(queue.peek()); // Returns head, returns null if empty
+        System.out.println(queue.element()); // Returns head, throws exception if empty
+
+        // Check if queue is empty
+        System.out.println(queue.isEmpty()); // Returns true if empty
+
+        // Get size of queue
+        System.out.println(queue.size()); // Returns number of elements
+
+        // Iterate over queue
+        queue.add(30);
+        queue.add(40);
+        queue.forEach(System.out::println); // Prints all elements
+    }
+}
