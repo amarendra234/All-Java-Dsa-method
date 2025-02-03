@@ -1,0 +1,32 @@
+
+import java.util.Stack;
+
+public class StackMethodsExample {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        // Push elements onto the stack
+        stack.push(10); // ✅ Adds element to the top
+        stack.push(20);
+        stack.push(30);
+
+        // Pop element from stack
+        System.out.println(stack.pop()); // ✅ Removes and returns top (Output: 30)
+
+        // Peek at top element without removing
+        System.out.println(stack.peek()); // ✅ Returns top element (Output: 20)
+
+        // Check if stack is empty
+        System.out.println(stack.isEmpty()); // ✅ Returns true if stack is empty
+
+        // Get stack size
+        System.out.println(stack.size()); // ✅ Returns number of elements (Output: 2)
+
+        // Search for an element (1-based index, -1 if not found)
+        System.out.println(stack.search(10)); // ✅ Returns position from top (Output: 2)
+        System.out.println(stack.search(50)); // ✅ Returns -1 if not found
+
+        // Iterate over stack
+        stack.forEach(System.out::println); // ✅ Prints all elements in stack
+    }
+}
