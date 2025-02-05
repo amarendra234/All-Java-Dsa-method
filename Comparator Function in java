@@ -1,0 +1,59 @@
+/**********************************************************************************************************************************************************/
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 7, 3, 8, 6};  
+        // 5 -> 101 (2 set bits)
+        // 7 -> 111 (3 set bits)
+        // 3 -> 011 (2 set bits)
+        // 8 -> 1000 (1 set bit)
+        // 6 -> 110 (2 set bits)
+
+        // Sorting using custom Comparator
+        Arrays.sort(arr, (a, b) -> {
+            int setBitsA = Integer.bitCount(a); // Count set bits in 'a'
+            int setBitsB = Integer.bitCount(b); // Count set bits in 'b'
+
+            if (setBitsA != setBitsB) {
+                return Integer.compare(setBitsB, setBitsA); // Sort by set bits in DESCENDING order
+            }
+            return Integer.compare(a, b); // If same set bits, sort in ASCENDING order
+        });
+
+        // Print sorted array
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+
+
+
+/****************************************************************************************************************************************************************/
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] people = {
+            {1, 5},
+            {0, 3},
+            {1, 2},
+            {0, 4},
+            {1, 1}
+        };
+
+        // Sorting using custom Comparator
+        Arrays.sort(people, (a, b) -> {
+            if (a[0] != b[0]) {
+                return Integer.compare(b[0], a[0]); // Sort by first value in DESCENDING order
+            }
+            return Integer.compare(a[1], b[1]); // If same, sort by second value in ASCENDING order
+        });
+
+        // Printing the sorted array
+        for (int[] person : people) {
+            System.out.println(Arrays.toString(person));
+        }
+    }
+}
